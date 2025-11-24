@@ -142,19 +142,19 @@ export default function AdminPage() {
          <Header />
         <div className=" gap-6 p-4">
       <div className="flex items-center justify-between mb-8">
-        <h1 className="text-2xl font-bold">🛠️ Admin - Create Puzzle</h1>
+
        
       </div>
       
       <div className="grid grid-cols-2 gap-8">
         <div>
-          <h2 className="text-xl mb-4 font-semibold">Setup Board Position</h2>
+        
           <div className="bg-custom-white p-4 rounded-lg inline-block">
             <Chessboard 
               position={game.fen()}
               onPieceDrop={onPieceDrop}
               onSquareRightClick={onSquareRightClick}
-              boardWidth={500}
+              boardWidth="100%"
               arePiecesDraggable={true}
               customBoardStyle={{
                 borderRadius: '4px',
