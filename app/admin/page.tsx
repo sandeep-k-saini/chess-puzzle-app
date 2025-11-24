@@ -95,6 +95,8 @@ export default function AdminPage() {
               customBoardStyle={{
                 borderRadius: '4px',
               }}
+              customLightSquareStyle={{ backgroundColor: '#6796AD' }}   // Light squares
+              customDarkSquareStyle={{ backgroundColor: '#CADBE1' }}    // Dark squares
             />
           </div>
           <div className="mt-4 bg-gray-800 p-4 rounded">
