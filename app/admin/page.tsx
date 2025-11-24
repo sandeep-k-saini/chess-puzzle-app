@@ -149,12 +149,13 @@ export default function AdminPage() {
       <div className="grid grid-cols-2 gap-8">
         <div>
         
-          <div className="bg-custom-white p-4 rounded-lg inline-block">
-            <Chessboard 
+          <div className="bg-custom-white p-4 rounded-lg inline-block w-[100%]">
+         <center>
+             <Chessboard 
               position={game.fen()}
               onPieceDrop={onPieceDrop}
               onSquareRightClick={onSquareRightClick}
-              boardWidth="100%"
+              boardWidth={400}
               arePiecesDraggable={true}
               customBoardStyle={{
                 borderRadius: '4px',
@@ -163,6 +164,7 @@ export default function AdminPage() {
               customLightSquareStyle={{ backgroundColor: '#CADBE1' }}
               customDarkSquareStyle={{ backgroundColor: '#6796AD' }}
             />
+         </center>
           </div>
           <div className="mt-4 bg-custom-white p-4 rounded">
             <p className="text-sm text-gray-400 mb-2 font-semibold">Current FEN:</p>
@@ -244,12 +246,14 @@ export default function AdminPage() {
             <button 
               onClick={savePuzzle} 
               className="flex-1 bg-green-600 text-white hover:bg-green-700 p-3 rounded font-semibold transition-colors"
+              style={{fontSize:"15px"}}
             >
               Save Puzzle
             </button>
             <button 
               onClick={resetForm} 
               className="flex-1 bg-red-600 text-white hover:bg-red-600 p-3 rounded font-semibold transition-colors"
+              style={{fontSize:"15px"}}
             >
                Reset
             </button>

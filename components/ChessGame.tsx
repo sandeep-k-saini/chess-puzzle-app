@@ -180,7 +180,7 @@ export default function ChessGame() {
           <Chessboard 
             position={game.fen()}
             onPieceDrop={onPieceDrop}
-            boardWidth={500}
+            boardWidth={400}
             boardOrientation={playerColor}
             arePiecesDraggable={true}
             customBoardStyle={{
