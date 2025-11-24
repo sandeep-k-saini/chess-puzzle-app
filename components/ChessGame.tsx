@@ -156,6 +156,7 @@ export default function ChessGame() {
       </div>
     );
   }
+  
 
   return (
     <div className="flex gap-6 p-8 min-h-screen">
@@ -170,6 +171,8 @@ export default function ChessGame() {
             borderRadius: '4px',
             boxShadow: '0 2px 10px rgba(0, 0, 0, 0.5)',
           }}
+          customLightSquareStyle={{ backgroundColor: '#6796AD' }}   // Light squares
+          customDarkSquareStyle={{ backgroundColor: '#CADBE1' }}    // Dark squares
         />
       </div>
       
