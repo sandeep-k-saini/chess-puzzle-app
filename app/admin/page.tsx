@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Chessboard } from 'react-chessboard';
 import { Chess, Square } from 'chess.js';
 import SideBar from '../../components/SideBar';
+import Header from '../../components/Header';
 
 export default function AdminPage() {
   const [game, setGame] = useState(new Chess());
@@ -134,10 +135,14 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="min-h-screen bg-custom text-white p-8">
-       {/* <SideBar /> */}
+   <div className="flex min-h-screen bg-custom">
+     
+<SideBar />
+      <div className="w-full">
+         <Header />
+        <div className=" gap-6 p-4">
       <div className="flex items-center justify-between mb-8">
-        <h1 className="text-4xl font-bold">🛠️ Admin - Create Puzzle</h1>
+        <h1 className="text-2xl font-bold">🛠️ Admin - Create Puzzle</h1>
        
       </div>
       
@@ -165,7 +170,7 @@ export default function AdminPage() {
           </div>
           
           {/* Instructions */}
-          <div className="mt-4 bg-blue-900 border border-blue-500 p-4 rounded">
+          <div className="mt-4 text-white border  p-4 rounded"  style={{ background: 'linear-gradient(131.65deg, #6340FF 9.43%, #FF40C6 70.51%, #FF8040 131.59%)' }}>
             <p className="text-sm font-semibold mb-2">💡 Controls:</p>
             <ul className="text-sm space-y-1">
               <li>• <strong>Move pieces ANYWHERE:</strong> Drag and drop (no restrictions!)</li>
@@ -184,7 +189,7 @@ export default function AdminPage() {
               value={goalText}
               onChange={(e) => setGoalText(e.target.value)}
               placeholder="e.g., Checkmate in 2 moves"
-              className="w-full p-3 bg-custom-grayy rounded text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
+              className="w-full p-3 bg-custom-grayy rounded  border border-gray-600 focus:border-blue-500 focus:outline-none"
               required
             />
           </label>
@@ -196,7 +201,7 @@ export default function AdminPage() {
               onChange={(e) => setHints(e.target.value)}
               placeholder="Look for queen sacrifice&#10;King is trapped on back rank"
               rows={4}
-              className="w-full p-3 bg-custom-grayy rounded text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
+              className="w-full p-3 bg-custom-grayy rounded  border border-gray-600 focus:border-blue-500 focus:outline-none"
             />
           </label>
           
@@ -207,7 +212,7 @@ export default function AdminPage() {
               value={solution}
               onChange={(e) => setSolution(e.target.value)}
               placeholder="Qxf7+, Kh8, Qf8#"
-              className="w-full p-3 bg-custom-grayy rounded text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
+              className="w-full p-3 bg-custom-grayy rounded  border border-gray-600 focus:border-blue-500 focus:outline-none"
             />
           </label>
           
@@ -216,7 +221,7 @@ export default function AdminPage() {
             <select 
               value={playerColor} 
               onChange={(e) => setPlayerColor(e.target.value as 'white' | 'black')}
-              className="w-full p-3 bg-custom-grayy rounded text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
+              className="w-full p-3 bg-custom-grayy rounded  border border-gray-600 focus:border-blue-500 focus:outline-none"
             >
               <option value="white">White</option>
               <option value="black">Black</option>
@@ -231,26 +236,28 @@ export default function AdminPage() {
               max="5"
               value={difficulty}
               onChange={(e) => setDifficulty(Number(e.target.value))}
-              className="w-full p-3 bg-custom-grayy rounded text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
+              className="w-full p-3 bg-custom-grayy rounded  border border-gray-600 focus:border-blue-500 focus:outline-none"
             />
           </label>
           
           <div className="flex gap-4">
             <button 
               onClick={savePuzzle} 
-              className="flex-1 bg-green-600 hover:bg-green-700 p-3 rounded font-semibold transition-colors"
+              className="flex-1 bg-green-600 text-white hover:bg-green-700 p-3 rounded font-semibold transition-colors"
             >
-              💾 Save Puzzle
+              Save Puzzle
             </button>
             <button 
               onClick={resetForm} 
-              className="flex-1 bg-red-600 hover:bg-red-700 p-3 rounded font-semibold transition-colors"
+              className="flex-1 bg-red-600 text-white hover:bg-red-600 p-3 rounded font-semibold transition-colors"
             >
-              🔄 Reset
+               Reset
             </button>
           </div>
         </div>
       </div>
+    </div>
+    </div>
     </div>
   );
 }
