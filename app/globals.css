@@ -73,3 +73,6 @@ body {
 .bg-custom-white {
   background-color: #FFFFFF;
 }
+.bg-custom-grayy {
+  background-color: lab(92 0 -0.01);
+}

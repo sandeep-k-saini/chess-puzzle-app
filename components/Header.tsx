@@ -5,7 +5,7 @@ const lessonTitle = "Rook Endgames: Building a Bridge";
 const lessonSubtitle = "Lesson 1 · Level 1 Fundamentals";
 const lessonDuration = "45 min lesson";
 const puzzleRating = "Puzzle Rating:1204";
-const avatarUrl = "profile.jpg"; // Change if you use another path
+const avatarUrl = "./Images/customer-1 1.png"; // Change if you use another path
 
 const Header = () => (
   <div style={{

@@ -196,11 +196,11 @@ export default function ChessGame() {
       <div className="w-96 bg-custom-white p-6 rounded-lg h-fit">
         <h2 className="text-2xl font-bold mb-4">🧩 Chess Puzzle</h2>
         
-        <div className="bg-gray-700 p-4 rounded mb-4">
+        <div className="bg-custom-grayy p-4 rounded mb-4">
           <p>{status}</p>
         </div>
         
-        <div className="bg-gray-700 p-4 rounded mb-4 min-h-[100px]">
+        <div className="bg-custom-grayy p-4 rounded mb-4 min-h-[100px]">
           <p className="text-sm text-gray-400 mb-2">💡 Hint</p>
           <p>{puzzle?.hints[Math.max(0, hintIndex - 1)] || 'Click "Show Hint" for help'}</p>
         </div>

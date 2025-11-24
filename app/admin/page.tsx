@@ -136,7 +136,7 @@ export default function AdminPage() {
     <div className="min-h-screen bg-custom text-white p-8">
       <div className="flex items-center justify-between mb-8">
         <h1 className="text-4xl font-bold">🛠️ Admin - Create Puzzle</h1>
-        <a href="/" className="bg-gray-700 hover:bg-gray-600 px-6 py-3 rounded font-semibold">
+        <a href="/" className="bg-custom-grayy hover:bg-gray-600 px-6 py-3 rounded font-semibold">
           ← Back to Game
         </a>
       </div>
@@ -184,7 +184,7 @@ export default function AdminPage() {
               value={goalText}
               onChange={(e) => setGoalText(e.target.value)}
               placeholder="e.g., Checkmate in 2 moves"
-              className="w-full p-3 bg-gray-700 rounded text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
+              className="w-full p-3 bg-custom-grayy rounded text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
               required
             />
           </label>
@@ -196,7 +196,7 @@ export default function AdminPage() {
               onChange={(e) => setHints(e.target.value)}
               placeholder="Look for queen sacrifice&#10;King is trapped on back rank"
               rows={4}
-              className="w-full p-3 bg-gray-700 rounded text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
+              className="w-full p-3 bg-custom-grayy rounded text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
             />
           </label>
           
@@ -207,7 +207,7 @@ export default function AdminPage() {
               value={solution}
               onChange={(e) => setSolution(e.target.value)}
               placeholder="Qxf7+, Kh8, Qf8#"
-              className="w-full p-3 bg-gray-700 rounded text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
+              className="w-full p-3 bg-custom-grayy rounded text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
             />
           </label>
           
@@ -216,7 +216,7 @@ export default function AdminPage() {
             <select 
               value={playerColor} 
               onChange={(e) => setPlayerColor(e.target.value as 'white' | 'black')}
-              className="w-full p-3 bg-gray-700 rounded text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
+              className="w-full p-3 bg-custom-grayy rounded text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
             >
               <option value="white">White</option>
               <option value="black">Black</option>
@@ -231,7 +231,7 @@ export default function AdminPage() {
               max="5"
               value={difficulty}
               onChange={(e) => setDifficulty(Number(e.target.value))}
-              className="w-full p-3 bg-gray-700 rounded text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
+              className="w-full p-3 bg-custom-grayy rounded text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
             />
           </label>
           

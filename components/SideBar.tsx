@@ -8,6 +8,7 @@ import GroupIcon from '@mui/icons-material/Group';
 import BookIcon from '@mui/icons-material/Book';
 import SchoolIcon from '@mui/icons-material/School';
 import EditIcon from '@mui/icons-material/Edit';
+import ProfileImage from '../public/Images/customer-1 1.png';
 
 const navItems = [
   { icon: <HomeIcon style={{ fontSize: 24 }}/>, label: "Home" },
@@ -91,7 +92,7 @@ const Sidebar = () => {
           flexDirection: "column",
           alignItems: "center"
         }}>
-          <img src="profile.jpg" alt="Avatar"
+          <img src="./Images/customer-1 1.png" alt="Avatar"
             style={{
               width: 44, height: 44,
               borderRadius: "50%", objectFit: "cover",
@@ -114,7 +115,7 @@ const Sidebar = () => {
             padding: "6px 10px",
             marginBottom: 6,
             display: "flex", justifyContent: "space-between", alignItems: "center",
-            fontSize: 12,
+            fontSize: 15,
             fontWeight: 500,
             boxShadow: "0 1px 3px #eee"
           }}>
@@ -130,7 +131,7 @@ const Sidebar = () => {
             borderRadius: 10,
             padding: "6px 10px",
             display: "flex", justifyContent: "space-between", alignItems: "center",
-            fontSize: 12,
+            fontSize: 15,
             fontWeight: 500,
             boxShadow: "0 1px 3px #eee"
           }}>
