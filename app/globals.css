@@ -24,6 +24,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
 /* Cream/beige color for white pieces - matches #E9E4BD */
 [data-piece="wP"],
 [data-piece="wN"],
@@ -44,3 +45,25 @@ body {
   filter: brightness(0.3) contrast(1.1) !important;
 }
 
+/* Target white fills inside black pieces SVGs and make them cream */
+[data-piece^="b"] svg [fill="white"],
+[data-piece^="b"] svg [fill="#fff"],
+[data-piece^="b"] svg [fill="#FFF"],
+[data-piece^="b"] svg [fill="#ffffff"],
+[data-piece^="b"] svg [fill="#FFFFFF"] {
+  fill: #E9E4BD !important;
+}
+
+/* Target white strokes inside black pieces SVGs and make them cream */
+[data-piece^="b"] svg [stroke="white"],
+[data-piece^="b"] svg [stroke="#fff"],
+[data-piece^="b"] svg [stroke="#FFF"],
+[data-piece^="b"] svg [stroke="#ffffff"],
+[data-piece^="b"] svg [stroke="#FFFFFF"] {
+  stroke: #E9E4BD !important;
+}
+
+/* Add subtle cream glow/outline to black pieces */
+[data-piece^="b"] svg {
+  filter: drop-shadow(0 0 0.5px #E9E4BD) drop-shadow(0 0 0.3px #E9E4BD);
+}
