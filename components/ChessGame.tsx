@@ -156,24 +156,33 @@ export default function ChessGame() {
       </div>
     );
   }
-  
 
   return (
-    <div className="flex gap-6 p-8 min-h-screen">
+    <div className="flex gap-6 p-8 min-h-screen bg-gray-900">
       <div className="bg-gray-800 p-6 rounded-lg h-fit">
-        <Chessboard 
-          position={game.fen()}
-          onPieceDrop={onPieceDrop}
-          boardWidth={500}
-          boardOrientation={playerColor}
-          arePiecesDraggable={true}
-          customBoardStyle={{
-            borderRadius: '4px',
-            boxShadow: '0 2px 10px rgba(0, 0, 0, 0.5)',
-          }}
-          customLightSquareStyle={{ backgroundColor: '#6796AD' }}   // Light squares
-          customDarkSquareStyle={{ backgroundColor: '#CADBE1' }}    // Dark squares
-        />
+        <style jsx>{`
+          .custom-board :global([data-piece*="w"]) {
+            filter: brightness(0.95) sepia(1) saturate(1.5) hue-rotate(25deg) !important;
+          }
+          .custom-board :global([data-piece*="b"]) {
+            filter: brightness(0.3) !important;
+          }
+        `}</style>
+        <div className="custom-board">
+          <Chessboard 
+            position={game.fen()}
+            onPieceDrop={onPieceDrop}
+            boardWidth={500}
+            boardOrientation={playerColor}
+            arePiecesDraggable={true}
+            customBoardStyle={{
+              borderRadius: '4px',
+              boxShadow: '0 2px 10px rgba(0, 0, 0, 0.5)',
+            }}
+            customLightSquareStyle={{ backgroundColor: '#CADBE1' }}
+            customDarkSquareStyle={{ backgroundColor: '#6796AD' }}
+          />
+        </div>
       </div>
       
       <div className="w-96 bg-gray-800 p-6 rounded-lg h-fit">

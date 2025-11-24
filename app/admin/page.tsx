@@ -55,23 +55,81 @@ export default function AdminPage() {
     setDifficulty(3);
   }
 
+  // Allow pieces to be placed ANYWHERE (bypass chess rules)
   function onPieceDrop(sourceSquare: string, targetSquare: string) {
     try {
-      const gameCopy = new Chess(game.fen());
+      const board = game.board();
+      const sourceFile = sourceSquare.charCodeAt(0) - 97;
+      const sourceRank = 8 - parseInt(sourceSquare[1]);
+      const targetFile = targetSquare.charCodeAt(0) - 97;
+      const targetRank = 8 - parseInt(targetSquare[1]);
       
-      const move = gameCopy.move({
-        from: sourceSquare,
-        to: targetSquare,
-        promotion: 'q'
-      });
+      const piece = board[sourceRank][sourceFile];
       
-      if (move === null) return false;
+      if (!piece) return false;
       
-      setGame(gameCopy);
+      const newBoard = board.map(row => [...row]);
+      newBoard[targetRank][targetFile] = piece;
+      newBoard[sourceRank][sourceFile] = null;
+      
+      const newFen = boardToFen(newBoard);
+      const newGame = new Chess(newFen);
+      setGame(newGame);
+      
       return true;
     } catch (error) {
+      console.error('Move error:', error);
       return false;
     }
+  }
+
+  // Right-click to delete piece
+  function onSquareRightClick(square: Square) {
+    const piece = game.get(square);
+    if (piece) {
+      removePiece(square);
+    }
+  }
+
+  function removePiece(square: Square) {
+    try {
+      const board = game.board();
+      const file = square.charCodeAt(0) - 97;
+      const rank = 8 - parseInt(square[1]);
+      
+      const newBoard = board.map(row => [...row]);
+      newBoard[rank][file] = null;
+      
+      const newFen = boardToFen(newBoard);
+      const newGame = new Chess(newFen);
+      setGame(newGame);
+    } catch (error) {
+      console.error('Failed to remove piece:', error);
+    }
+  }
+
+  function boardToFen(board: any[]): string {
+    let fen = '';
+    for (let i = 0; i < 8; i++) {
+      let empty = 0;
+      for (let j = 0; j < 8; j++) {
+        const square = board[i][j];
+        if (square) {
+          if (empty > 0) {
+            fen += empty;
+            empty = 0;
+          }
+          const pieceChar = square.type;
+          fen += square.color === 'w' ? pieceChar.toUpperCase() : pieceChar;
+        } else {
+          empty++;
+        }
+      }
+      if (empty > 0) fen += empty;
+      if (i < 7) fen += '/';
+    }
+    fen += ' w KQkq - 0 1';
+    return fen;
   }
 
   return (
@@ -90,18 +148,29 @@ export default function AdminPage() {
             <Chessboard 
               position={game.fen()}
               onPieceDrop={onPieceDrop}
+              onSquareRightClick={onSquareRightClick}
               boardWidth={500}
               arePiecesDraggable={true}
               customBoardStyle={{
                 borderRadius: '4px',
+                boxShadow: '0 2px 10px rgba(0, 0, 0, 0.5)',
               }}
-              customLightSquareStyle={{ backgroundColor: '#6796AD' }}   // Light squares
-              customDarkSquareStyle={{ backgroundColor: '#CADBE1' }}    // Dark squares
+              customLightSquareStyle={{ backgroundColor: '#CADBE1' }}
+              customDarkSquareStyle={{ backgroundColor: '#6796AD' }}
             />
           </div>
           <div className="mt-4 bg-gray-800 p-4 rounded">
             <p className="text-sm text-gray-400 mb-2 font-semibold">Current FEN:</p>
             <p className="text-xs font-mono break-all text-green-400">{game.fen()}</p>
+          </div>
+          
+          {/* Instructions */}
+          <div className="mt-4 bg-blue-900 border border-blue-500 p-4 rounded">
+            <p className="text-sm font-semibold mb-2">💡 Controls:</p>
+            <ul className="text-sm space-y-1">
+              <li>• <strong>Move pieces ANYWHERE:</strong> Drag and drop (no restrictions!)</li>
+              <li>• <strong>Delete piece:</strong> Right-click on any piece</li>
+            </ul>
           </div>
         </div>
         
@@ -177,7 +246,7 @@ export default function AdminPage() {
               onClick={resetForm} 
               className="flex-1 bg-red-600 hover:bg-red-700 p-3 rounded font-semibold transition-colors"
             >
-              🗑️ Clear
+              🔄 Reset
             </button>
           </div>
         </div>
