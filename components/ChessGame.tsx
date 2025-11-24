@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { Chessboard } from 'react-chessboard';
 import { Chess } from 'chess.js';
 import { IPuzzle } from '@/models/Puzzle';
+import Sidebar from '@/components/SideBar';
+import Header from '@/components/Header';
 
 export default function ChessGame() {
   const [game, setGame] = useState(new Chess());
@@ -130,8 +132,8 @@ export default function ChessGame() {
 
   if (error) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white p-8">
-        <div className="bg-gray-800 p-8 rounded-lg max-w-md text-center">
+      <div className="flex items-center justify-center min-h-screen bg-custom text-white p-8 ">
+        <div className="bg-custom-white p-8 rounded-lg max-w-md text-center">
           <h2 className="text-2xl font-bold mb-4">❌ {error}</h2>
           <p className="mb-6 text-gray-400">
             Create your first puzzle in the admin panel to get started.
@@ -151,15 +153,21 @@ export default function ChessGame() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white">
+      <div className="flex items-center justify-center min-h-screen bg-custom text-white">
         <div className="text-2xl">⏳ Loading puzzle...</div>
       </div>
     );
   }
 
   return (
-    <div className="flex gap-6 p-8 min-h-screen bg-gray-900">
-      <div className="bg-gray-800 p-6 rounded-lg h-fit">
+    <div className="flex min-h-screen bg-custom">
+     
+      <Sidebar />
+      <div className="w-full">
+         <Header />
+        <div className="flex gap-6 p-4">
+         
+          <div className="bg-custom-white p-6 rounded-lg h-fit">
         <style jsx>{`
           .custom-board :global([data-piece*="w"]) {
             filter: brightness(0.95) sepia(1) saturate(1.5) hue-rotate(25deg) !important;
@@ -172,7 +180,7 @@ export default function ChessGame() {
           <Chessboard 
             position={game.fen()}
             onPieceDrop={onPieceDrop}
-            boardWidth={500}
+            boardWidth={400}
             boardOrientation={playerColor}
             arePiecesDraggable={true}
             customBoardStyle={{
@@ -185,14 +193,14 @@ export default function ChessGame() {
         </div>
       </div>
       
-      <div className="w-96 bg-gray-800 p-6 rounded-lg h-fit">
+      <div className="w-96 bg-custom-white p-6 rounded-lg h-fit">
         <h2 className="text-2xl font-bold mb-4">🧩 Chess Puzzle</h2>
         
-        <div className="bg-gray-700 p-4 rounded mb-4">
+        <div className="bg-custom-grayy p-4 rounded mb-4">
           <p>{status}</p>
         </div>
         
-        <div className="bg-gray-700 p-4 rounded mb-4 min-h-[100px]">
+        <div className="bg-custom-grayy p-4 rounded mb-4 min-h-[100px]">
           <p className="text-sm text-gray-400 mb-2">💡 Hint</p>
           <p>{puzzle?.hints[Math.max(0, hintIndex - 1)] || 'Click "Show Hint" for help'}</p>
         </div>
@@ -207,6 +215,8 @@ export default function ChessGame() {
           <button onClick={resetPuzzle} className="bg-blue-600 hover:bg-blue-700 p-3 rounded font-semibold">
             🔄 Reset
           </button>
+        </div>
+      </div>
         </div>
       </div>
     </div>

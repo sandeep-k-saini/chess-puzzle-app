@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { Chessboard } from 'react-chessboard';
 import { Chess, Square } from 'chess.js';
+import SideBar from '../../components/SideBar';
+import Header from '../../components/Header';
 
 export default function AdminPage() {
   const [game, setGame] = useState(new Chess());
@@ -133,23 +135,27 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-8">
+   <div className="flex min-h-screen bg-custom">
+     
+<SideBar />
+      <div className="w-full">
+         <Header />
+        <div className=" gap-6 p-4">
       <div className="flex items-center justify-between mb-8">
-        <h1 className="text-4xl font-bold">🛠️ Admin - Create Puzzle</h1>
-        <a href="/" className="bg-gray-700 hover:bg-gray-600 px-6 py-3 rounded font-semibold">
-          ← Back to Game
-        </a>
+
+       
       </div>
       
       <div className="grid grid-cols-2 gap-8">
         <div>
-          <h2 className="text-xl mb-4 font-semibold">Setup Board Position</h2>
-          <div className="bg-gray-800 p-4 rounded-lg inline-block">
-            <Chessboard 
+        
+          <div className="bg-custom-white p-4 rounded-lg inline-block w-[100%]">
+         <center>
+             <Chessboard 
               position={game.fen()}
               onPieceDrop={onPieceDrop}
               onSquareRightClick={onSquareRightClick}
-              boardWidth={500}
+              boardWidth={400}
               arePiecesDraggable={true}
               customBoardStyle={{
                 borderRadius: '4px',
@@ -158,14 +164,15 @@ export default function AdminPage() {
               customLightSquareStyle={{ backgroundColor: '#CADBE1' }}
               customDarkSquareStyle={{ backgroundColor: '#6796AD' }}
             />
+         </center>
           </div>
-          <div className="mt-4 bg-gray-800 p-4 rounded">
+          <div className="mt-4 bg-custom-white p-4 rounded">
             <p className="text-sm text-gray-400 mb-2 font-semibold">Current FEN:</p>
             <p className="text-xs font-mono break-all text-green-400">{game.fen()}</p>
           </div>
           
           {/* Instructions */}
-          <div className="mt-4 bg-blue-900 border border-blue-500 p-4 rounded">
+          <div className="mt-4 text-white border  p-4 rounded"  style={{ background: 'linear-gradient(131.65deg, #6340FF 9.43%, #FF40C6 70.51%, #FF8040 131.59%)' }}>
             <p className="text-sm font-semibold mb-2">💡 Controls:</p>
             <ul className="text-sm space-y-1">
               <li>• <strong>Move pieces ANYWHERE:</strong> Drag and drop (no restrictions!)</li>
@@ -174,7 +181,7 @@ export default function AdminPage() {
           </div>
         </div>
         
-        <div className="bg-gray-800 p-6 rounded-lg h-fit">
+        <div className="bg-custom-white p-6 rounded-lg h-fit">
           <h2 className="text-xl mb-4 font-semibold">Puzzle Details</h2>
           
           <label className="block mb-4">
@@ -184,7 +191,7 @@ export default function AdminPage() {
               value={goalText}
               onChange={(e) => setGoalText(e.target.value)}
               placeholder="e.g., Checkmate in 2 moves"
-              className="w-full p-3 bg-gray-700 rounded text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
+              className="w-full p-3 bg-custom-grayy rounded  border border-gray-600 focus:border-blue-500 focus:outline-none"
               required
             />
           </label>
@@ -196,7 +203,7 @@ export default function AdminPage() {
               onChange={(e) => setHints(e.target.value)}
               placeholder="Look for queen sacrifice&#10;King is trapped on back rank"
               rows={4}
-              className="w-full p-3 bg-gray-700 rounded text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
+              className="w-full p-3 bg-custom-grayy rounded  border border-gray-600 focus:border-blue-500 focus:outline-none"
             />
           </label>
           
@@ -207,7 +214,7 @@ export default function AdminPage() {
               value={solution}
               onChange={(e) => setSolution(e.target.value)}
               placeholder="Qxf7+, Kh8, Qf8#"
-              className="w-full p-3 bg-gray-700 rounded text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
+              className="w-full p-3 bg-custom-grayy rounded  border border-gray-600 focus:border-blue-500 focus:outline-none"
             />
           </label>
           
@@ -216,7 +223,7 @@ export default function AdminPage() {
             <select 
               value={playerColor} 
               onChange={(e) => setPlayerColor(e.target.value as 'white' | 'black')}
-              className="w-full p-3 bg-gray-700 rounded text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
+              className="w-full p-3 bg-custom-grayy rounded  border border-gray-600 focus:border-blue-500 focus:outline-none"
             >
               <option value="white">White</option>
               <option value="black">Black</option>
@@ -231,26 +238,30 @@ export default function AdminPage() {
               max="5"
               value={difficulty}
               onChange={(e) => setDifficulty(Number(e.target.value))}
-              className="w-full p-3 bg-gray-700 rounded text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
+              className="w-full p-3 bg-custom-grayy rounded  border border-gray-600 focus:border-blue-500 focus:outline-none"
             />
           </label>
           
           <div className="flex gap-4">
             <button 
               onClick={savePuzzle} 
-              className="flex-1 bg-green-600 hover:bg-green-700 p-3 rounded font-semibold transition-colors"
+              className="flex-1 bg-green-600 text-white hover:bg-green-700 p-3 rounded font-semibold transition-colors"
+              style={{fontSize:"15px"}}
             >
-              💾 Save Puzzle
+              Save Puzzle
             </button>
             <button 
               onClick={resetForm} 
-              className="flex-1 bg-red-600 hover:bg-red-700 p-3 rounded font-semibold transition-colors"
+              className="flex-1 bg-red-600 text-white hover:bg-red-600 p-3 rounded font-semibold transition-colors"
+              style={{fontSize:"15px"}}
             >
-              🔄 Reset
+               Reset
             </button>
           </div>
         </div>
       </div>
+    </div>
+    </div>
     </div>
   );
 }
