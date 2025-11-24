@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { Chessboard } from 'react-chessboard';
 import { Chess } from 'chess.js';
 import { IPuzzle } from '@/models/Puzzle';
+import Sidebar from '@/components/SideBar';
+import Header from '@/components/Header';
 
 export default function ChessGame() {
   const [game, setGame] = useState(new Chess());
@@ -130,7 +132,7 @@ export default function ChessGame() {
 
   if (error) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white p-8">
+      <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white p-8 ">
         <div className="bg-gray-800 p-8 rounded-lg max-w-md text-center">
           <h2 className="text-2xl font-bold mb-4">❌ {error}</h2>
           <p className="mb-6 text-gray-400">
@@ -158,8 +160,14 @@ export default function ChessGame() {
   }
 
   return (
-    <div className="flex gap-6 p-8 min-h-screen bg-gray-900">
-      <div className="bg-gray-800 p-6 rounded-lg h-fit">
+    <div className="flex min-h-screen bg-gray-900">
+     
+      <Sidebar />
+      <div className="w-full">
+         <Header />
+        <div className="flex gap-6">
+         
+          <div className="bg-gray-800 p-6 rounded-lg h-fit">
         <style jsx>{`
           .custom-board :global([data-piece*="w"]) {
             filter: brightness(0.95) sepia(1) saturate(1.5) hue-rotate(25deg) !important;
@@ -207,6 +215,8 @@ export default function ChessGame() {
           <button onClick={resetPuzzle} className="bg-blue-600 hover:bg-blue-700 p-3 rounded font-semibold">
             🔄 Reset
           </button>
+        </div>
+      </div>
         </div>
       </div>
     </div>
