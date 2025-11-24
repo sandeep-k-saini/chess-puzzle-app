@@ -64,6 +64,6 @@ body {
 }
 
 /* Add subtle cream glow/outline to black pieces */
-[data-piece^="b"] svg {
+/* [data-piece^="b"] svg {
   filter: drop-shadow(0 0 0.5px #E9E4BD) drop-shadow(0 0 0.3px #E9E4BD);
-}
+} */
