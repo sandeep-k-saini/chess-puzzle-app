@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Chessboard } from 'react-chessboard';
 import { Chess, Square } from 'chess.js';
+import SideBar from '../../components/SideBar';
 
 export default function AdminPage() {
   const [game, setGame] = useState(new Chess());
@@ -134,11 +135,10 @@ export default function AdminPage() {
 
   return (
     <div className="min-h-screen bg-custom text-white p-8">
+       {/* <SideBar /> */}
       <div className="flex items-center justify-between mb-8">
         <h1 className="text-4xl font-bold">🛠️ Admin - Create Puzzle</h1>
-        <a href="/" className="bg-custom-grayy hover:bg-gray-600 px-6 py-3 rounded font-semibold">
-          ← Back to Game
-        </a>
+       
       </div>
       
       <div className="grid grid-cols-2 gap-8">

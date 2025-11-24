@@ -8,47 +8,54 @@ import GroupIcon from '@mui/icons-material/Group';
 import BookIcon from '@mui/icons-material/Book';
 import SchoolIcon from '@mui/icons-material/School';
 import EditIcon from '@mui/icons-material/Edit';
-import ProfileImage from '../public/Images/customer-1 1.png';
 
 const navItems = [
-  { icon: <HomeIcon style={{ fontSize: 24 }}/>, label: "Home" },
-  { icon: <MenuBookIcon style={{ fontSize: 24 }}/>, label: "Training" },
-  { icon: <ExtensionIcon style={{ fontSize: 24 }}/>, label: "Puzzles" },
-  { icon: <GroupIcon style={{ fontSize: 24 }}/>, label: "Community" },
-  { icon: <BookIcon style={{ fontSize: 24 }}/>, label: "Openings" },
-  { icon: <SchoolIcon style={{ fontSize: 24 }}/>, label: "Coaching" },
+  { icon: <img src="./Images/Container.svg" alt="" style={{width: 24, height: 24}} />, label: "Home" },
+  { icon: <img src="./Images/Container (1).svg" alt="" style={{width: 22, height: 22 ,marginRight: 5}} />, label: "Training" },
+  { icon: <img src="./Images/Container (2).svg" alt="" style={{width: 22, height: 22 ,marginRight: 5}} />, label: "Puzzles" },
+  { icon: <img src="./Images/Container (3).svg" alt="" style={{width: 22, height: 22 ,marginRight: 5}} />, label: "Community" },
+  { icon: <img src="./Images/Container (4).svg" alt="" style={{width: 22, height: 22 ,marginRight: 5}} />, label: "Openings" },
+  { icon: <img src="./Images/Container (5).svg" alt="" style={{width: 22, height: 22 ,marginRight: 5}} />, label: "Coaching" },
 ];
 
 // Toggle Icon Box
 const IconBox = ({ onClick, collapsed }) => (
-  <div
-    onClick={onClick}
-    style={{
-      marginLeft: 16,
-      width: 32,
-      height: 32,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      borderRadius: 7,
-      border: "2px solid #AAA",
-      background: "#fafafa",
-      cursor: "pointer"
-    }}
-  >
-    <span style={{
-      color: "#666",
-      fontSize: 18,
-      fontWeight: 500,
-      fontFamily: "monospace"
-    }}>
-      {collapsed ? "⟶" : "K"}
-    </span>
-  </div>
+  // Only show if sidebar is NOT collapsed
+  !collapsed ? (
+    <div
+      onClick={onClick}
+      style={{
+        marginLeft: 16,
+        width: 25,
+        height: 25,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: 7,
+        border: "2px solid #AAA",
+        background: "#fafafa",
+        cursor: "pointer"
+      }}
+    >
+      <span style={{
+        color: "#666",
+        fontSize: 18,
+        fontWeight: 500,
+        fontFamily: "monospace"
+      }}>
+  <img src="./Images/Group 2085664720.svg" alt="" style={{width: 15, height: 15}} />
+      </span>
+    </div>
+  ) : null
 );
 
 const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(false);
+
+  // Click handler for navigation items
+  const navItemClick = () => {
+    if (collapsed) setCollapsed(false);
+  };
 
   return (
     <div
@@ -80,7 +87,8 @@ const Sidebar = () => {
             letterSpacing: 1
           }}>CHESS ROCKET</span>
         )}
-        <IconBox onClick={() => setCollapsed(c => !c)} collapsed={collapsed} />
+        {/* Only show toggle button if sidebar is NOT collapsed */}
+        <IconBox onClick={() => setCollapsed(true)} collapsed={collapsed} />
       </div>
 
       {/* Profile Section */}
@@ -92,9 +100,9 @@ const Sidebar = () => {
           flexDirection: "column",
           alignItems: "center"
         }}>
-          <img src="./Images/customer-1 1.png" alt="Avatar"
+          <img src="./Images/customer-1 1.png" alt="Avatar" 
             style={{
-              width: 44, height: 44,
+              width: 65, height: 65,
               borderRadius: "50%", objectFit: "cover",
               marginBottom: 7, background: "#e8e8e8"
             }}
@@ -107,7 +115,6 @@ const Sidebar = () => {
             Edit Profile
             <EditIcon style={{ fontSize: 13, marginLeft: 4, color: "#444" }} />
           </div>
-          {/* Stats Cards */}
           <div style={{
             width: "100%",
             background: "#fafbfc",
@@ -161,17 +168,18 @@ const Sidebar = () => {
               padding: collapsed ? "12px 0 12px 0" : "10px 30px",
               cursor: "pointer",
               fontSize: 15,
-              color: "#666",
+              color: "#6F767E",
               borderRadius: 7,
               marginBottom: 2,
               justifyContent: collapsed ? "center" : "flex-start",
               transition: "background 0.18s"
             }}
+            onClick={navItemClick}
             onMouseOver={e => (e.currentTarget.style.background = "#f5f5f5")}
             onMouseOut={e => (e.currentTarget.style.background = "transparent")}
           >
             {icon}
-            {!collapsed && <span>{label}</span>}
+            {!collapsed && <span style={{marginRight: 5, fontWeight: 600}}>{label}</span>}
           </div>
         ))}
       </div>
