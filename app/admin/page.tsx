@@ -133,7 +133,7 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-8">
+    <div className="min-h-screen bg-custom text-white p-8">
       <div className="flex items-center justify-between mb-8">
         <h1 className="text-4xl font-bold">🛠️ Admin - Create Puzzle</h1>
         <a href="/" className="bg-gray-700 hover:bg-gray-600 px-6 py-3 rounded font-semibold">
@@ -144,7 +144,7 @@ export default function AdminPage() {
       <div className="grid grid-cols-2 gap-8">
         <div>
           <h2 className="text-xl mb-4 font-semibold">Setup Board Position</h2>
-          <div className="bg-gray-800 p-4 rounded-lg inline-block">
+          <div className="bg-custom-white p-4 rounded-lg inline-block">
             <Chessboard 
               position={game.fen()}
               onPieceDrop={onPieceDrop}
@@ -159,7 +159,7 @@ export default function AdminPage() {
               customDarkSquareStyle={{ backgroundColor: '#6796AD' }}
             />
           </div>
-          <div className="mt-4 bg-gray-800 p-4 rounded">
+          <div className="mt-4 bg-custom-white p-4 rounded">
             <p className="text-sm text-gray-400 mb-2 font-semibold">Current FEN:</p>
             <p className="text-xs font-mono break-all text-green-400">{game.fen()}</p>
           </div>
@@ -174,7 +174,7 @@ export default function AdminPage() {
           </div>
         </div>
         
-        <div className="bg-gray-800 p-6 rounded-lg h-fit">
+        <div className="bg-custom-white p-6 rounded-lg h-fit">
           <h2 className="text-xl mb-4 font-semibold">Puzzle Details</h2>
           
           <label className="block mb-4">

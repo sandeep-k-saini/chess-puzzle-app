@@ -72,8 +72,8 @@ const Sidebar = () => {
         <span role="img" aria-label="rocket" style={{ fontSize: collapsed ? 30 : 28 }}>🚀</span>
         {!collapsed && (
           <span style={{
-            fontWeight: 700,
-            fontSize: 22,
+            fontWeight: 900,
+            fontSize: 12,
             fontStyle: "italic",
             marginLeft: 7,
             letterSpacing: 1

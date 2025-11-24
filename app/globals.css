@@ -67,3 +67,9 @@ body {
 /* [data-piece^="b"] svg {
   filter: drop-shadow(0 0 0.5px #E9E4BD) drop-shadow(0 0 0.3px #E9E4BD);
 } */
+.bg-custom {
+  background-color: #F4F4F4;
+}
+.bg-custom-white {
+  background-color: #FFFFFF;
+}
