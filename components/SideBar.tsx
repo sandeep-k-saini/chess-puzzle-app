@@ -18,8 +18,14 @@ const navItems = [
   { icon: <img src="./Images/Container (5).svg" alt="" style={{width: 22, height: 22 ,marginRight: 5}} />, label: "Coaching" },
 ];
 
+// Define props interface for IconBox
+interface IconBoxProps {
+  onClick: () => void;
+  collapsed: boolean;
+}
+
 // Toggle Icon Box
-const IconBox = ({ onClick, collapsed }) => (
+const IconBox: React.FC<IconBoxProps> = ({ onClick, collapsed }) => (
   // Only show if sidebar is NOT collapsed
   !collapsed ? (
     <div
