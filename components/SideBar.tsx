@@ -69,7 +69,7 @@ const Sidebar = () => {
         width: collapsed ? 70 : 240,
         minWidth: collapsed ? 70 : 240,
         background: "#fff",
-        height: "100vh",
+        // height: "100vh",
         borderRight: "1px solid #eee",
         transition: "width 0.18s",
         boxSizing: "border-box"
