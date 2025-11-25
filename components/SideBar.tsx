@@ -106,7 +106,7 @@ const Sidebar = () => {
           flexDirection: "column",
           alignItems: "center"
         }}>
-        <div className="flex  gap-2">
+        <div className="flex  gap-2 w-full">
             <img src="./Images/customer-1 1.png" alt="Avatar" 
             style={{
               width: 65, height: 65,
@@ -114,7 +114,7 @@ const Sidebar = () => {
               marginBottom: 7, background: "#e8e8e8"
             }}
           />
-          <div className="">
+          <div className=" p-2">
             <div style={{ display: "flex", alignItems: "center", marginBottom: 1 }}>
             <span style={{ fontWeight: 600, fontSize: 18, marginRight: 5 }}>Kenny</span>
             <span style={{ fontSize: 14 }}>🇺🇸</span>
