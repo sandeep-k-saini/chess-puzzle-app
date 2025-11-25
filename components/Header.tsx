@@ -36,29 +36,28 @@ const Header = () => (
       gap: 12
     }}>
       <div style={{
-        padding: "4px 12px",
+        padding: "7px 13px",
         background: "#f7f7f7",
         borderRadius: 16,
-        fontSize: 13,
-        color: "#555",
+        fontSize: 14,
+        color: "#6F767E",
         display: "flex", alignItems: "center",
         gap: 5
       }}>
-        <span role="img" aria-label="clock" style={{ fontSize: 14 }}>⏰</span>
+        <span role="img" aria-label="clock" style={{ fontSize: 14 }}><img src="../Images/Icon.svg" alt="" /></span>
         {lessonDuration}
       </div>
       <div style={{
-        padding: "4px 12px",
-        background: "#edeafe",
+        padding: "7px 13px",
+        background: "#EEF2FF",
         borderRadius: 16,
-        fontSize: 13,
-        color: "#6957f0",
+        fontSize: 14,
+        color: "#4F39F6",
         fontWeight: 600,
         display: "flex", alignItems: "center",
         gap: 6,
-        border: "1px solid #d2ccfa"
       }}>
-        <span role="img" aria-label="trophy" style={{ fontSize: 15 }}>🎖️</span>
+        <span role="img" aria-label="trophy" style={{ fontSize: 15 }}><img src="../Images/Icon (1).svg" alt="" /></span>
         {puzzleRating}
       </div>
       <img src={avatarUrl} alt="Avatar"
