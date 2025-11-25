@@ -167,7 +167,7 @@ export default function ChessGame() {
          <Header />
         <div className="flex gap-6 p-4">
          
-          <div className="bg-custom-white p-6 w-[50%] rounded-3xl h-fit">
+          <div className="bg-custom-white p-6 w-[60%] rounded-3xl h-fit">
         <style jsx>{`
           .custom-board :global([data-piece*="w"]) {
             filter: brightness(0.95) sepia(1) saturate(1.5) hue-rotate(25deg) !important;
@@ -244,7 +244,7 @@ export default function ChessGame() {
 
         
       </div>
- <div className="w-96 flex flex-col space-y-4">
+ <div className="w-[40%] flex flex-col space-y-4">
   {/* Current Session */}
   <div className="bg-white rounded-3xl p-5">
     <div className="font-semibold text-[15px] mb-4">Current Session</div>
