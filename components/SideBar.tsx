@@ -107,13 +107,29 @@ const Sidebar = () => {
           alignItems: "center"
         }}>
         <div className="flex  gap-2 w-full">
-            <img src="./Images/customer-1 1.png" alt="Avatar" 
-            style={{
-              width: 65, height: 65,
-              borderRadius: "50%", objectFit: "cover",
-              marginBottom: 7, background: "#e8e8e8"
-            }}
-          />
+             <div style={{ position: "relative", display: "inline-block" }}>
+    <img src="./Images/customer-1 1.png" alt="Avatar"
+      style={{
+        width: 65, height: 65,
+        borderRadius: "50%", objectFit: "cover",
+        marginBottom: 7, background: "#e8e8e8"
+      }}
+    />
+    <span
+      style={{
+        position: "absolute",
+        bottom: 8,
+        right: 0,
+        width: 15,
+        height: 15,
+        borderRadius: "50%",
+        backgroundColor: "#43db77",
+        border: "2.5px solid #fff",
+        boxSizing: "border-box",
+        display: "inline-block"
+      }}
+    ></span>
+  </div>
           <div className=" p-2">
             <div style={{ display: "flex", alignItems: "center", marginBottom: 1 }}>
             <span style={{ fontWeight: 600, fontSize: 18, marginRight: 5 }}>Kenny</span>
