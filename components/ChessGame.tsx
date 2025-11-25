@@ -206,25 +206,19 @@ export default function ChessGame() {
     {/* Controls group */}
     <div className="flex items-center space-x-2">
       <button className="bg-white border border-gray-200 rounded-md p-2 flex items-center justify-center">
-        <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="10" />
-          <path d="M12 8v4l3 3" />
-        </svg>
+        <img src="../Images/light.svg" alt="" />
       </button>
-      <div className="bg-gray-100 rounded-md px-4 py-2 text-gray-700 flex items-center font-medium">
-        <svg className="w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="10" />
-          <path d="M12 8v4l3 3" />
-        </svg>
+      <div className="bg-white rounded-md px-4 py-1 text-[#6F767E] flex border border-gray-200 items-center font-medium">
+      <img src="../Images/clock-three 1.svg" alt="" style={{marginRight:"10px"}} />
         00:59
       </div>
       <button className="bg-white border border-gray-200 rounded-md p-2 flex items-center justify-center">
-        <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 20 20">
+        <svg className="w-4 h-4 text-[#6F767E]" fill="none" stroke="currentColor" viewBox="0 0 20 20">
           <path d="M12 15l-5-5 5-5" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       </button>
       <button className="bg-white border border-gray-200 rounded-md p-2 flex items-center justify-center">
-        <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 20 20">
+        <svg className="w-4 h-4 text-[#6F767E]" fill="none" stroke="currentColor" viewBox="0 0 20 20">
           <path d="M8 5l5 5-5 5" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       </button>
