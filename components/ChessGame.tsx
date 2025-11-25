@@ -306,20 +306,20 @@ export default function ChessGame() {
     <div className="font-semibold text-[15px] mb-4">Move History</div>
     <div className="flex flex-col gap-2">
       <div className="rounded-xl border border-gray-200 px-4 py-2">
-        <div className="font-medium text-gray-900">1. e4</div>
-        <div className="text-xs text-gray-500">White</div>
+        <div className="font-medium text-gray-900" style={{fontSize:"14px"}}>1. e4</div>
+        <div className="text-xs text-gray-500" style={{fontSize:"12px"}}>White</div>
       </div>
       <div className="rounded-xl border border-gray-200 px-4 py-2">
-        <div className="font-medium text-gray-900">1... e5</div>
-        <div className="text-xs text-gray-500">Black</div>
+        <div className="font-medium text-gray-900" style={{fontSize:"14px"}}>1... e5</div>
+        <div className="text-xs text-gray-500" style={{fontSize:"12px"}}>Black</div>
       </div>
       <div className="rounded-xl border border-gray-200 px-4 py-2">
-        <div className="font-medium text-gray-900">2. Ba4</div>
-        <div className="text-xs text-gray-500">White</div>
+        <div className="font-medium text-gray-900" style={{fontSize:"14px"}}>2. Ba4</div>
+        <div className="text-xs text-gray-500" style={{fontSize:"12px"}}>White</div>
       </div>
       <div className="rounded-xl border border-gray-200 px-4 py-2">
-        <div className="font-medium text-gray-900">2... Nf6</div>
-        <div className="text-xs text-gray-500">Black</div>
+        <div className="font-medium text-gray-900" style={{fontSize:"14px"}}>2... Nf6</div>
+        <div className="text-xs text-gray-500" style={{fontSize:"12px"}}>Black</div>
       </div>
       <div className="rounded-xl border-2" style={{borderColor: "#6366F1", background: "#EEF2FF"}}>
         <div className="px-4 py-2">
