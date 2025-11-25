@@ -277,13 +277,14 @@ export default function ChessGame() {
     </div>
     {/* Progress info */}
     <div className="mt-4">
+      <div className="rounded-full bg-gray-200 h-[6px] w-full">
+        <div className="rounded-full h-[6px]" style={{width: '92%', backgroundColor: "#6366F1"}} />
+      </div>
       <div className="flex items-center justify-between mb-1">
         <span className="text-sm" style={{color: "#6366F1", fontWeight: 500}}>Accuracy: 92%</span>
         <span className="text-xs text-gray-400">Avg. Time: 1:23</span>
       </div>
-      <div className="rounded-full bg-gray-200 h-[6px] w-full">
-        <div className="rounded-full h-[6px]" style={{width: '92%', backgroundColor: "#6366F1"}} />
-      </div>
+      
     </div>
   </div>
 
@@ -314,8 +315,8 @@ export default function ChessGame() {
         </div>
       </div>
       <div className="rounded-xl border border-gray-200 px-4 py-2">
-        <div className="font-medium text-gray-400">3... </div>
-        <div className="text-xs text-gray-400">Your turn</div>
+        <div className="font-medium text-gray-900">3... </div>
+        <div className="text-xs text-gray-500">Your turn</div>
       </div>
     </div>
   </div>

@@ -40,6 +40,7 @@ const Header = () => (
         background: "#f7f7f7",
         borderRadius: 16,
         fontSize: 14,
+         fontWeight: 600,
         color: "#6F767E",
         display: "flex", alignItems: "center",
         gap: 5
