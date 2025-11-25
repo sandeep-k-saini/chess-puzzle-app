@@ -252,7 +252,7 @@ export default function ChessGame() {
       </div>
  <div className="w-96 flex flex-col space-y-4">
   {/* Current Session */}
-  <div className="bg-white rounded-3xl shadow p-5">
+  <div className="bg-white rounded-3xl p-5">
     <div className="font-semibold text-[15px] mb-4">Current Session</div>
     <div className="flex items-center justify-between py-2 border-b border-gray-100">
       <div className="flex items-center">
@@ -302,7 +302,7 @@ export default function ChessGame() {
   </div>
 
   {/* Move History */}
-  <div className="bg-white rounded-3xl shadow p-5">
+  <div className="bg-white rounded-3xl  p-5">
     <div className="font-semibold text-[15px] mb-4">Move History</div>
     <div className="flex flex-col gap-2">
       <div className="rounded-xl border border-gray-200 px-4 py-2">

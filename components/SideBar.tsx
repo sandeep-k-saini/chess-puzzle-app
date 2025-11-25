@@ -10,12 +10,12 @@ import SchoolIcon from '@mui/icons-material/School';
 import EditIcon from '@mui/icons-material/Edit';
 
 const navItems = [
-  { icon: <img src="./Images/Container.svg" alt="" style={{width: 24, height: 24}} />, label: "Home" },
-  { icon: <img src="./Images/Container (1).svg" alt="" style={{width: 22, height: 22 ,marginRight: 5}} />, label: "Training" },
-  { icon: <img src="./Images/Container (2).svg" alt="" style={{width: 22, height: 22 ,marginRight: 5}} />, label: "Puzzles" },
-  { icon: <img src="./Images/Container (3).svg" alt="" style={{width: 22, height: 22 ,marginRight: 5}} />, label: "Community" },
-  { icon: <img src="./Images/Container (4).svg" alt="" style={{width: 22, height: 22 ,marginRight: 5}} />, label: "Openings" },
-  { icon: <img src="./Images/Container (5).svg" alt="" style={{width: 22, height: 22 ,marginRight: 5}} />, label: "Coaching" },
+  { icon: <img src="./Images/Container.svg" alt="" style={{width: 22, height: 22}} />, label: "Home" },
+  { icon: <img src="./Images/Container (1).svg" alt="" style={{width: 21, height: 21 ,marginRight: 5}} />, label: "Training" },
+  { icon: <img src="./Images/Container (2).svg" alt="" style={{width: 21, height: 21 ,marginRight: 5}} />, label: "Puzzles" },
+  { icon: <img src="./Images/Container (3).svg" alt="" style={{width: 21, height: 21 ,marginRight: 5}} />, label: "Community" },
+  { icon: <img src="./Images/Container (4).svg" alt="" style={{width: 21, height: 21 ,marginRight: 5}} />, label: "Openings" },
+  { icon: <img src="./Images/Container (5).svg" alt="" style={{width: 21, height: 21 ,marginRight: 5}} />, label: "Coaching" },
 ];
 
 // Define props interface for IconBox
@@ -32,12 +32,12 @@ const IconBox: React.FC<IconBoxProps> = ({ onClick, collapsed }) => (
       onClick={onClick}
       style={{
         marginLeft: 16,
-        width: 25,
-        height: 25,
+        width: 23,
+        height: 23,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        borderRadius: 7,
+        borderRadius: 5,
         border: "2px solid #AAA",
         background: "#fafafa",
         cursor: "pointer"
@@ -49,7 +49,7 @@ const IconBox: React.FC<IconBoxProps> = ({ onClick, collapsed }) => (
         fontWeight: 500,
         fontFamily: "monospace"
       }}>
-  <img src="./Images/Group 2085664720.svg" alt="" style={{width: 15, height: 15}} />
+  <img src="./Images/Group 2085664720.svg" alt="" style={{width: 13, height: 13}} />
       </span>
     </div>
   ) : null
@@ -127,34 +127,36 @@ const Sidebar = () => {
         </div>
           <div style={{
             width: "100%",
-            background: "#fafbfc",
+            // background: "#fafbfc",
             borderRadius: 10,
+            border: "1px solid #e8e8e8",
             padding: "6px 10px",
             marginBottom: 6,
             display: "flex", justifyContent: "space-between", alignItems: "center",
-            fontSize: 15,
+            fontSize: 14,
             fontWeight: 500,
-            boxShadow: "0 1px 3px #eee"
+            // boxShadow: "0 1px 3px #eee"
           }}>
-            <span style={{ color: "#888" }}>Current Level</span>
+            <span style={{ color: "#727272" }}>Current Level</span>
             <span>
-              <span style={{ color: "#333", fontWeight: 700, marginRight: 2 }}>12</span>
+              <span style={{ color: "#101010", fontWeight: 700, marginRight: 2 }}>12</span>
               <span role="img" aria-label="trophy" style={{fontSize: 15}}>🏆</span>
             </span>
           </div>
           <div style={{
             width: "100%",
-            background: "#fafbfc",
+            // background: "#fafbfc",
             borderRadius: 10,
+            border: "1px solid #e8e8e8",
             padding: "6px 10px",
+            marginBottom: 6,
             display: "flex", justifyContent: "space-between", alignItems: "center",
-            fontSize: 15,
+            fontSize: 14,
             fontWeight: 500,
-            boxShadow: "0 1px 3px #eee"
           }}>
-            <span style={{ color: "#888" }}>Total Puzzles</span>
+            <span style={{ color: "#727272" }}>Total Puzzles</span>
             <span>
-              <span style={{ color: "#22aa44", fontWeight: 700, marginRight: 2 }}>569</span>
+              <span style={{ color: "#101010", fontWeight: 700, marginRight: 2 }}>569</span>
               <span role="img" aria-label="puzzle" style={{fontSize: 15}}>🧩</span>
             </span>
           </div>
