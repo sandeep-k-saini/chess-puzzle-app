@@ -181,12 +181,12 @@ export default function ChessGame() {
             <Chessboard 
             position={game.fen()}
             onPieceDrop={onPieceDrop}
-            boardWidth={400}
+            boardWidth={500}
             boardOrientation={playerColor}
             arePiecesDraggable={true}
             customBoardStyle={{
               borderRadius: '4px',
-              boxShadow: '0 2px 10px rgba(0, 0, 0, 0.5)',
+              // boxShadow: '0 2px 10px rgba(0, 0, 0, 0.5)',
             }}
             customLightSquareStyle={{ backgroundColor: '#CADBE1' }}
             customDarkSquareStyle={{ backgroundColor: '#6796AD' }}
@@ -251,10 +251,7 @@ export default function ChessGame() {
     <div className="flex items-center justify-between py-2 border-b border-gray-100">
       <div className="flex items-center">
         <div className="w-7 h-7 rounded-full flex items-center justify-center bg-green-500/10 mr-3">
-          <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" strokeWidth="2" />
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 8l-6 8-2-3"/>
-          </svg>
+          <img src="../Images/check-icon.svg" alt="" />
         </div>
         <span className="text-gray-900 font-medium">Solved</span>
       </div>
@@ -263,9 +260,7 @@ export default function ChessGame() {
     <div className="flex items-center justify-between py-2 border-b border-gray-100">
       <div className="flex items-center">
         <div className="w-7 h-7 rounded-full flex items-center justify-center bg-gray-500/10 mr-3">
-          <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-          </svg>
+          <img src="../Images/bost.svg" alt="" />
         </div>
         <span className="text-gray-900 font-medium">Streak</span>
       </div>
@@ -274,10 +269,7 @@ export default function ChessGame() {
     <div className="flex items-center justify-between py-2">
       <div className="flex items-center">
         <div className="w-7 h-7 rounded-full flex items-center justify-center bg-[#F2705B]/10 mr-3">
-          <svg className="w-4 h-4 text-[#F2705B]" fill="currentColor" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 17v4m-7-4v-1a5 5 0 017-4.58A5 5 0 0119 16v1"/>
-          </svg>
+          <img src="../Images/winner.svg" alt="" />
         </div>
         <span className="text-gray-900 font-medium">Rating</span>
       </div>
