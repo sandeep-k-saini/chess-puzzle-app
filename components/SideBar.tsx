@@ -87,7 +87,7 @@ const Sidebar = () => {
         {!collapsed && (
           <span style={{
             fontWeight: 900,
-            fontSize: 12,
+            fontSize: 15,
             fontStyle: "italic",
             marginLeft: 7,
             letterSpacing: 1
@@ -106,21 +106,25 @@ const Sidebar = () => {
           flexDirection: "column",
           alignItems: "center"
         }}>
-          <img src="./Images/customer-1 1.png" alt="Avatar" 
+        <div className="flex  gap-2">
+            <img src="./Images/customer-1 1.png" alt="Avatar" 
             style={{
               width: 65, height: 65,
               borderRadius: "50%", objectFit: "cover",
               marginBottom: 7, background: "#e8e8e8"
             }}
           />
-          <div style={{ display: "flex", alignItems: "center", marginBottom: 5 }}>
-            <span style={{ fontWeight: 600, fontSize: 14, marginRight: 5 }}>Kenny</span>
+          <div className="">
+            <div style={{ display: "flex", alignItems: "center", marginBottom: 1 }}>
+            <span style={{ fontWeight: 600, fontSize: 18, marginRight: 5 }}>Kenny</span>
             <span style={{ fontSize: 14 }}>🇺🇸</span>
           </div>
-          <div style={{ display: "flex", alignItems: "center", color: "#666", fontSize: 11, marginBottom: 10 }}>
+          <div style={{ display: "flex", alignItems: "center", color: "#000000", fontSize: 12, marginBottom: 10 }}>
             Edit Profile
-            <EditIcon style={{ fontSize: 13, marginLeft: 4, color: "#444" }} />
+            <EditIcon style={{ fontSize: 13, marginLeft: 4, color: "#000000" }} />
           </div>
+          </div>
+        </div>
           <div style={{
             width: "100%",
             background: "#fafbfc",

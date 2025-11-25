@@ -167,7 +167,7 @@ export default function ChessGame() {
          <Header />
         <div className="flex gap-6 p-4">
          
-          <div className="bg-custom-white p-6 rounded-lg h-fit">
+          <div className="bg-custom-white p-6 w-[50%] rounded-3xl h-fit">
         <style jsx>{`
           .custom-board :global([data-piece*="w"]) {
             filter: brightness(0.95) sepia(1) saturate(1.5) hue-rotate(25deg) !important;
@@ -177,7 +177,8 @@ export default function ChessGame() {
           }
         `}</style>
         <div className="custom-board">
-          <Chessboard 
+          <center>
+            <Chessboard 
             position={game.fen()}
             onPieceDrop={onPieceDrop}
             boardWidth={400}
@@ -189,11 +190,153 @@ export default function ChessGame() {
             }}
             customLightSquareStyle={{ backgroundColor: '#CADBE1' }}
             customDarkSquareStyle={{ backgroundColor: '#6796AD' }}
-          />
+          />  
+          </center>
+        </div>
+<div className="bg-white rounded-3xl  p-6 w-[100%] mx-auto">
+  <div className="flex items-center mb-3">
+    {/* Chess icon box */}
+    <span className="flex items-center justify-center bg-blue-100 rounded-3xl w-7 h-7 mr-2">
+     <img src="../Images/Frame 144.svg" alt="" />
+    </span>
+    {/* Label */}
+    <span className="font-semibold text-[#1A1D1F] text-base">White to Move</span>
+    {/* Spacer */}
+    <div className="flex-1" />
+    {/* Controls group */}
+    <div className="flex items-center space-x-2">
+      <button className="bg-white border border-gray-200 rounded-md p-2 flex items-center justify-center">
+        <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 8v4l3 3" />
+        </svg>
+      </button>
+      <div className="bg-gray-100 rounded-md px-4 py-2 text-gray-700 flex items-center font-medium">
+        <svg className="w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 8v4l3 3" />
+        </svg>
+        00:59
+      </div>
+      <button className="bg-white border border-gray-200 rounded-md p-2 flex items-center justify-center">
+        <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 20 20">
+          <path d="M12 15l-5-5 5-5" strokeWidth="2" strokeLinecap="round"/>
+        </svg>
+      </button>
+      <button className="bg-white border border-gray-200 rounded-md p-2 flex items-center justify-center">
+        <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 20 20">
+          <path d="M8 5l5 5-5 5" strokeWidth="2" strokeLinecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  {/* Three wide rounded buttons */}
+  <div className="flex gap-4">
+    <button className="flex-1 bg-gray-100 rounded-full py-3 flex items-center justify-center font-semibold text-[#6F767E] text-base" style={{fontSize:"15px"}}>
+      <img src="../Images/Vector (4).svg" style={{marginRight:"10px"}} alt="" />
+      Get a Hint
+    </button>
+    
+    <button className="flex-1 bg-gray-100 rounded-full py-3 flex items-center justify-center font-semibold text-[#6F767E] text-base" style={{fontSize:"15px"}}>
+          <img src="../Images/eye 1.svg" alt="" style={{marginRight:"10px"}} />
+      Solution
+    </button>
+    <button className="flex-1 bg-gray-100 rounded-full py-3 flex items-center justify-center font-semibold text-[#6F767E] text-base" style={{fontSize:"15px"}}>
+      <img src="../Images/book 1.svg" alt="" style={{marginRight:"10px"}} />
+      Analysis
+    </button>
+  </div>
+</div>
+
+        
+      </div>
+ <div className="w-96 flex flex-col space-y-4">
+  {/* Current Session */}
+  <div className="bg-white rounded-3xl shadow p-5">
+    <div className="font-semibold text-[15px] mb-4">Current Session</div>
+    <div className="flex items-center justify-between py-2 border-b border-gray-100">
+      <div className="flex items-center">
+        <div className="w-7 h-7 rounded-full flex items-center justify-center bg-green-500/10 mr-3">
+          <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" strokeWidth="2" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 8l-6 8-2-3"/>
+          </svg>
+        </div>
+        <span className="text-gray-900 font-medium">Solved</span>
+      </div>
+      <span className="text-[16px] font-bold text-gray-800">12</span>
+    </div>
+    <div className="flex items-center justify-between py-2 border-b border-gray-100">
+      <div className="flex items-center">
+        <div className="w-7 h-7 rounded-full flex items-center justify-center bg-gray-500/10 mr-3">
+          <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <span className="text-gray-900 font-medium">Streak</span>
+      </div>
+      <span className="text-[16px] font-bold text-gray-800">8</span>
+    </div>
+    <div className="flex items-center justify-between py-2">
+      <div className="flex items-center">
+        <div className="w-7 h-7 rounded-full flex items-center justify-center bg-[#F2705B]/10 mr-3">
+          <svg className="w-4 h-4 text-[#F2705B]" fill="currentColor" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 17v4m-7-4v-1a5 5 0 017-4.58A5 5 0 0119 16v1"/>
+          </svg>
+        </div>
+        <span className="text-gray-900 font-medium">Rating</span>
+      </div>
+      <span className="text-[16px] font-bold text-gray-800">1,240</span>
+    </div>
+    {/* Progress info */}
+    <div className="mt-4">
+      <div className="flex items-center justify-between mb-1">
+        <span className="text-sm" style={{color: "#6366F1", fontWeight: 500}}>Accuracy: 92%</span>
+        <span className="text-xs text-gray-400">Avg. Time: 1:23</span>
+      </div>
+      <div className="rounded-full bg-gray-200 h-[6px] w-full">
+        <div className="rounded-full h-[6px]" style={{width: '92%', backgroundColor: "#6366F1"}} />
+      </div>
+    </div>
+  </div>
+
+  {/* Move History */}
+  <div className="bg-white rounded-3xl shadow p-5">
+    <div className="font-semibold text-[15px] mb-4">Move History</div>
+    <div className="flex flex-col gap-2">
+      <div className="rounded-xl border border-gray-200 px-4 py-2">
+        <div className="font-medium text-gray-900">1. e4</div>
+        <div className="text-xs text-gray-500">White</div>
+      </div>
+      <div className="rounded-xl border border-gray-200 px-4 py-2">
+        <div className="font-medium text-gray-900">1... e5</div>
+        <div className="text-xs text-gray-500">Black</div>
+      </div>
+      <div className="rounded-xl border border-gray-200 px-4 py-2">
+        <div className="font-medium text-gray-900">2. Ba4</div>
+        <div className="text-xs text-gray-500">White</div>
+      </div>
+      <div className="rounded-xl border border-gray-200 px-4 py-2">
+        <div className="font-medium text-gray-900">2... Nf6</div>
+        <div className="text-xs text-gray-500">Black</div>
+      </div>
+      <div className="rounded-xl border-2" style={{borderColor: "#6366F1", background: "#EEF2FF"}}>
+        <div className="px-4 py-2">
+          <div className="font-medium text-gray-900">3. O-O</div>
+          <div className="text-xs font-semibold" style={{color: "#6366F1"}}>Current</div>
         </div>
       </div>
-      
-      <div className="w-96 bg-custom-white p-6 rounded-lg h-fit">
+      <div className="rounded-xl border border-gray-200 px-4 py-2">
+        <div className="font-medium text-gray-400">3... </div>
+        <div className="text-xs text-gray-400">Your turn</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      {/* <div className="w-96 bg-custom-white p-6 rounded-lg h-fit">
         <h2 className="text-2xl font-bold mb-4">🧩 Chess Puzzle</h2>
         
         <div className="bg-custom-grayy p-4 rounded mb-4">
@@ -216,7 +359,7 @@ export default function ChessGame() {
             🔄 Reset
           </button>
         </div>
-      </div>
+      </div> */}
         </div>
       </div>
     </div>
