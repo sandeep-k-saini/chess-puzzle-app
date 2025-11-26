@@ -257,7 +257,7 @@ const Sidebar = () => {
           style={{
             position: "fixed",
             top: 16,
-            left: 16,
+            right: 16,
             zIndex: 1100,
             background: "#fafafa",
             border: "2px solid #AAA",
