@@ -234,7 +234,7 @@ const Sidebar = () => {
                 padding: collapsed ? "12px 0 12px 0" : "10px 30px",
                 cursor: "pointer",
                 fontSize: 15,
-                color: "#6F767E",
+                color: "# ",
                 borderRadius: 7,
                 marginBottom: 2,
                 justifyContent: collapsed ? "center" : "flex-start",

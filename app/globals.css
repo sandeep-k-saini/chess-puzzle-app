@@ -76,3 +76,6 @@ body {
 .bg-custom-grayy {
   background-color: lab(92 0 -0.01);
 }
+body {
+  background-color: #F4F4F4;
+}
