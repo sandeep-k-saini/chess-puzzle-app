@@ -146,7 +146,7 @@ export default function AdminPage() {
        
       </div>
       
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
         
           <div className="bg-custom-white p-4 rounded-lg inline-block w-[100%]">
@@ -155,7 +155,7 @@ export default function AdminPage() {
               position={game.fen()}
               onPieceDrop={onPieceDrop}
               onSquareRightClick={onSquareRightClick}
-              boardWidth={400}
+              // boardWidth={400}
               arePiecesDraggable={true}
               customBoardStyle={{
                 borderRadius: '4px',
