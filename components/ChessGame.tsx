@@ -194,7 +194,7 @@ export default function ChessGame() {
           </center>
         </div>
 <div className="bg-white rounded-3xl  p-6 w-[100%] mx-auto">
-  <div className="flex items-center mb-3">
+  <div className="flex items-center mb-3 md:flex-row flex-col">
     {/* Chess icon box */}
     <span className="flex items-center justify-center bg-blue-100 rounded-3xl w-7 h-7 mr-2">
      <img src="../Images/Frame 144.svg" alt="" />
@@ -204,7 +204,7 @@ export default function ChessGame() {
     {/* Spacer */}
     <div className="flex-1" />
     {/* Controls group */}
-    <div className="flex items-center space-x-2">
+    <div className="flex items-center  space-x-2">
       <button className="bg-white border border-gray-200 rounded-md p-2 flex items-center justify-center">
         <img src="../Images/light.svg" alt="" />
       </button>
@@ -225,7 +225,7 @@ export default function ChessGame() {
     </div>
   </div>
   {/* Three wide rounded buttons */}
-  <div className="flex gap-4">
+  <div className="flex gap-4 flex-col md:flex-row ">
     <button className="flex-1 bg-gray-100 rounded-full py-3 flex items-center justify-center font-semibold text-[#6F767E] text-base" style={{fontSize:"15px"}}>
       <img src="../Images/Vector (4).svg" style={{marginRight:"10px"}} alt="" />
       Get a Hint
