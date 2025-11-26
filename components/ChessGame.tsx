@@ -194,7 +194,7 @@ export default function ChessGame() {
           </center>
         </div>
 <div className="bg-white rounded-3xl  p-6 w-[100%] mx-auto">
-  <div className="flex items-center mb-3">
+  <div className="flex items-center mb-3 md:flex-row flex-col">
     {/* Chess icon box */}
     <span className="flex items-center justify-center bg-blue-100 rounded-3xl w-7 h-7 mr-2">
      <img src="../Images/Frame 144.svg" alt="" />
